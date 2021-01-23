@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+{% block app_content %}
+
+
+<div class="container" style="margin-top:30px">
+	<div class="row">
+    	<div class="col-sm-8">
+      	<h1>About</h1>
+      	<h3>Biography</h3>
+
+      <p>Pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.Pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language</p>
+      <p>Pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.Pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language</p>
+      <p>Pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.Pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language</p>
+    </div>
+
+	<div class="col-sm-4" style="margin-top:30px">
+        <h5>Photo of me</h5>
+        <img src="{{url_for('static', filename='download.jpg')}}">      
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}

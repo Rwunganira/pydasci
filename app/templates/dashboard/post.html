@@ -1,0 +1,25 @@
+
+
+{% extends 'base.html' %}
+
+
+
+{% block app_content %}
+
+<div class="container">
+	 <div class="row">
+
+	    <div class="col-sm-12">
+	
+			<h1>Article {{post.id}}: {{post.title}}</h1>
+
+			<small>{{ post.date_created}}</small>
+			<hr>
+			<p>{{post.text1 | safe}}</p>
+		
+		</div>
+	</div>
+
+</div>
+
+{% endblock%}
