@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Python for Data Science - Blog</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+  </head>
+<body>
+
+
+
+    
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">pydasci.com</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('main.index')}}">Home</a>
+      </li>
+      {% if current_user.is_anonymous %}
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('auth.login')}}">Login</a>
+      </li>
+
+      {% endif %}
+
+
+      {% if current_user.is_authenticated %}
+
+      <li class="nav-item">
+        <a class="nav-link "  href="{{url_for('auth.logout')}}">Logout</a>
+      </li>  
+
+      {% endif %}
+
+      {% if current_user.is_administrator %}
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('articles.article')}}">Dashboard-Articles</a>
+      </li> 
+
+      {% endif %}
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('dashboard.dashboard')}}">Articles</a>
+      </li>
+      
+    </ul>
+  </div>  
+</nav>
+
+    <div class="container">
+      {% block app_content %}{% endblock %}
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  
+</body>
+</html>

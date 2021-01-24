@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+
+
+<form class="form form-horizontal" method="post" role="form">
+  {{ form.hidden_tag() }}
+  {{ wtf.form_errors(form, hiddens="only") }}
+
+
+  <h1>{{ wtf.form_field(form.title) }}</h1>
+  <p>{{ wtf.form_field(form.text1) }}</p>
+  <p>{{ wtf.form_field(form.submit) }}</p>
+
+</form>
+ {{ ckeditor.load() }}
+ {{ ckeditor.config(name='text1') }}
+  
+
+
+
+{% endblock %}

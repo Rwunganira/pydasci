@@ -1,0 +1,111 @@
+2019-12-26 23:19:55,665 ERROR: Exception on /dashboard [GET] [in c:\users\samuel\desktop\pydasci\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Samuel\Desktop\pydasci\app\dashboard\routes.py", line 14, in dashboard
+    articles=Article.query.all()
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3211, in all
+    return list(self)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3367, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3392, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\engine\base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\engine\default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (sqlite3.OperationalError) no such column: article.text1
+[SQL: SELECT article.id AS article_id, article.title AS article_title, article.text1 AS article_text1, article.text2 AS article_text2, article.text3 AS article_text3, article.date_created AS article_date_created 
+FROM article]
+(Background on this error at: http://sqlalche.me/e/e3q8)
+2019-12-26 23:21:35,094 ERROR: Exception on /article [POST] [in c:\users\samuel\desktop\pydasci\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Samuel\Desktop\pydasci\app\articles\routes.py", line 18, in article
+    db.session.commit()
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1036, in commit
+    self.transaction.commit()
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\orm\session.py", line 503, in commit
+    self._prepare_impl()
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\orm\session.py", line 482, in _prepare_impl
+    self.session.flush()
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2479, in flush
+    self._flush(objects)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2617, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2577, in _flush
+    flush_context.execute()
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
+    uow,
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    insert,
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 1137, in _emit_insert_statements
+    statement, params
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\engine\base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\samuel\desktop\pydasci\venv\lib\site-packages\sqlalchemy\engine\default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (sqlite3.OperationalError) table article has no column named text1
+[SQL: INSERT INTO article (title, text1, text2, text3, date_created) VALUES (?, ?, ?, ?, ?)]
+[parameters: (u'Glucose and energy', u"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 15 ... (276 characters truncated) ... set sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", u"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 15 ... (276 characters truncated) ... set sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", u"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 15 ... (276 characters truncated) ... set sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", '2019-12-26 21:21:35.020000')]
+(Background on this error at: http://sqlalche.me/e/e3q8)
+2019-12-26 23:22:31,180 INFO: Microblog startup [in C:\Users\Samuel\Desktop\pydasci\app\__init__.py:79]
+2019-12-26 23:22:40,167 INFO: Microblog startup [in C:\Users\Samuel\Desktop\pydasci\app\__init__.py:79]
+2019-12-26 23:23:59,344 INFO: Microblog startup [in C:\Users\Samuel\Desktop\pydasci\app\__init__.py:79]
+2019-12-26 23:24:29,319 INFO: Microblog startup [in C:\Users\Samuel\Desktop\pydasci\app\__init__.py:79]
+2019-12-26 23:24:38,371 INFO: Microblog startup [in C:\Users\Samuel\Desktop\pydasci\app\__init__.py:79]
+2019-12-26 23:25:50,069 INFO: Microblog startup [in C:\Users\Samuel\Desktop\pydasci\app\__init__.py:79]
+2019-12-26 23:25:55,051 INFO: Microblog startup [in C:\Users\Samuel\Desktop\pydasci\app\__init__.py:79]
+2019-12-26 23:26:09,072 INFO: Microblog startup [in C:\Users\Samuel\Desktop\pydasci\app\__init__.py:79]
+2019-12-26 23:30:57,525 INFO: Microblog startup [in C:\Users\Samuel\Desktop\pydasci\app\__init__.py:79]

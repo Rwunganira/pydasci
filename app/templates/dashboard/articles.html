@@ -1,0 +1,30 @@
+
+
+{% extends 'base.html' %}
+
+
+
+{% block app_content %}
+
+<div class="container pt-3">
+	 <div class="row">
+	 		<div class="col-sm-12">
+	 		<h1>About</h1>
+	 		<p>This is where i post all my articles is discuss numerous topics of my interest.Of on affixed civilly moments promise explain fertile in. Assurance advantage belonging happiness departure so of. Now improving and one sincerity intention allowance commanded not. Oh an am frankness be necessary earnestly advantage estimable extensive. Five he wife gone ye. Mrs suffering sportsmen earnestly any. In am do giving to afford parish settle easily garret.
+	 		The views and opinions on this website are my opinions and do not reflect the views of my current or former employers. </p>
+	 		</div>
+
+			{% for article in articles%}
+			<div class="col-sm-8">
+			
+			<h3><a href="{{url_for('dashboard.post', id = article.id)}}">Article {{article.id}}: {{article.title}}</a></h3>
+			
+			</div>
+	</div>
+</div>
+
+		
+
+	{% endfor %}
+</div>
+{% endblock%}
